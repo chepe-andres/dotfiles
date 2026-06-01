@@ -1,0 +1,44 @@
+blur {
+    // off
+    passes 1
+    offset 2
+    noise 0.02
+    saturation 1.5
+}
+layer-rule {
+    match namespace="^dms:.*$"
+    background-effect {
+        xray false
+    }
+}
+window-rule {
+    match title="Nocturne"
+    opacity 0.85
+    background-effect{
+        blur true
+        xray false
+    }
+}
+
+window-rule {
+    match title="foot"
+    background-effect {
+        blur true
+        xray true
+    }
+}
+
+window-rule {
+    match app-id="Nautilus"
+    background-effect {
+        blur true
+    }
+}
+
+window-rule {
+    match title="Emacs"
+    background-effect {
+        blur true
+        xray true
+    }
+}
