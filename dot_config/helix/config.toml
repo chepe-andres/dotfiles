@@ -1,0 +1,80 @@
+
+theme = "peachpuff"
+
+[editor]
+rulers = [120]
+bufferline = "always"
+color-modes = true
+true-color = true
+auto-format = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.whitespace.render]
+tab = "all"
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name"]
+right = ["diagnostics", "selections", "position","position-percentage", "file-encoding"]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+auto-signature-help = false
+display-messages = true
+display-inlay-hints = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+other-lines = "error"
+
+[keys.normal]
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+"L" = "goto_line_end"
+"$" = "goto_line_end"
+"H" = "goto_line_start"
+"D" = "kill_to_line_end"
+"G" = "extend_to_file_end"
+"i" = ["insert_mode", "collapse_selection"]
+"a" = ["append_mode", "collapse_selection"]
+"F5" = ":reload"
+C-j = '@X"jd"jp'
+C-k = '@X"kdk"kP'
+
+# git
+A-r = ":reset-diff-change"
+
+C-space = "signature_help"
+
+# ZZ and ZQ to write+quit and force quit respectively
+Z = { Z = ":wq", Q = ":q!" }
+g = { q = ":reflow" }
+
+[keys.select]
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+"L" = "goto_line_end"
+"$" = "goto_line_end"
+"H" = "goto_line_start"
+"G" = "extend_to_file_end"
+"F5" = ":reload"
+C-j = '@X"jd"jp'
+C-k = '@X"kdk"kP'
+g = { q = ":reflow" }
+
+[keys.insert]
+C-space = "signature_help"
+"F5" = ":reload"
+
+# buffer stuff
+[keys.normal.C-b]
+left = "goto_previous_buffer"
+right = "goto_next_buffer"
+h = "goto_previous_buffer"
+l = "goto_next_buffer"
+q = ":buffer-close"
