@@ -1,0 +1,35 @@
+eval "$(starship init zsh)"
+
+source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source /home/linuxbrew/.linuxbrew/opt/fzf/shell/completion.zsh
+
+# Ctrl + Arrow keybindings
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
+# Ctrl + Backspace/Delete Kebindings
+bindkey '^H' backward-kill-word
+bindkey '^[[3;5~' kill-word
+
+# Alt + Backspace/Delete Keybinds
+bindkey "^[[3~" delete-char
+bindkey -M emacs '^[[3;3~' kill-word
+
+# Home/End Keybinds
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+setopt SHARE_HISTORY
+setopt autocd
+
+# Allow Bash-style globbing
+unsetopt nomatch
+
+
+alias foxfetch='fastfetch --logo ~/.config/fastfetch/fox-ansi.txt --config ~/.config/fastfetch/new-config.jsonc'

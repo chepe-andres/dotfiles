@@ -1,3 +1,11 @@
+input {
+    touchpad {
+        tap
+        accel-profile "adaptive"
+        click-method "clickfinger"
+    }
+}
+
 blur {
     // off
     passes 1
